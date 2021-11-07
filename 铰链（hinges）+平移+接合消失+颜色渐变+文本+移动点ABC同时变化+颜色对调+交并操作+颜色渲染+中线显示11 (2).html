@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>铰链（hinges）+平移+接合消失+颜色渐变+文本+移动点ABC同时变化+颜色对调+交并操作+颜色渲染+中线显示11.cdy</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #CSConsole {
+            background-color: #FAFAFA;
+            border-top: 1px solid #333333;
+            bottom: 0px;
+            height: 200px;
+            overflow-y: scroll;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cindyjs.org/dist/v0.8/CindyJS.css">
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.8/Cindy.js"></script>
+<script id="csinit" type="text/x-cindyscript">
+D(A,B,r):=[[cos(r),-sin(r)],[sin(r),cos(r)]]*(B-A)+A;
+E(A,B,n):=A+(B-A)*n;
+F(A,B):=(A+B)/2;
+G(A,B,C):=(A+B+C)/3;
+start=0;
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+dd=|H,L|/|H,M|*90°;
+ee=|M,L|/|K,M|;
+message1="┓( ´∀` )┏╮(╯▽╰)╭┓( ´∀` )┏";
+message2="铰链结构";
+drawtext((15,-35),message1,size->50);
+drawtext((35.6,-40.8),message2,size->50);
+if(L.y>=-7 & L.y<=5,
+B1=D(D,A,dd);
+B2=D(D,G,dd);
+draw(B1);
+draw(B2);
+draw(B1,B2);
+draw(D,B1);
+draw(D,B2);
+B3=D(D,B,-dd);
+B4=D(D,G,-dd);
+draw(B3);
+draw(B4);
+draw(B3,B4);
+draw(D,B3);
+draw(D,B4);
+B5=D(E,B,dd);
+B6=D(E,G,dd);
+draw(B5);
+draw(B6);
+draw(B5,B6);
+draw(E,B5);
+draw(E,B6);
+B7=D(E,G,-dd);
+B8=D(E,C,-dd);
+draw(B7);
+draw(B8);
+draw(B7,B8);
+draw(E,B7);
+draw(E,B8);
+B9=D(F,G,dd);
+B10=D(F,C,dd);
+draw(B9);
+draw(B10);
+draw(B9,B10);
+draw(F,B9);
+draw(F,B10);
+B11=D(F,G,-dd);
+B12=D(F,A,-dd);
+draw(B11);
+draw(B12);
+draw(B11,B12);
+draw(F,B11);
+draw(F,B12);
+shape1=polygon([D,B1,B2]);
+fill(shape1,color->(1,0.8,0));
+draw(shape1);
+shape2=polygon([D,B3,B4]);
+fill(shape2,color->(1,0.5,0));
+draw(shape2);
+shape3=polygon([E,B5,B6]);
+fill(shape3,color->(0.52,0.8,0.98));
+draw(shape3);
+shape4=polygon([E,B7,B8]);
+fill(shape4,color->(0,0.74,1));
+draw(shape4);
+shape5=polygon([F,B9,B10]);
+fill(shape5,color->(0.98,0.85,0.98));
+draw(shape5);
+shape6=polygon([F,B11,B12]);
+fill(shape6,color->(0.98,0.55,0.98));
+draw(shape6);
+);
+if(L.y==-7,
+shape7=polygon([B1,B2,B4]);
+shape8=polygon([B5,B6,B7]);
+shape9=polygon([B9,B10,B11]);
+shape7.visible=true;
+shape8.visible=true;
+shape9.visible=true;
+);
+if(L.y>=-16 & L.y<=-7,
+B1=D(D,A,90°);
+B2=D(D,G,90°);
+B3=D(D,B,-90°);
+B4=D(D,G,-90°);
+B5=D(E,B,90°);
+B6=D(E,G,90°);
+B7=D(E,G,-90°);
+B8=D(E,C,-90°);
+B9=D(F,G,90°);
+B10=D(F,C,90°);
+B11=D(F,G,-90°);
+B12=D(F,A,-90°);
+
+
+A1=F(B1,B11);
+A2=F(B11,B6);
+A3=F(B6,B1);
+
+A4=F(B2,B10);
+A5=F(B10,B7);
+A6=F(B7,B2);
+
+A7=F(B4,B9);
+A8=F(B9,B5);
+A9=F(B5,B4);
+
+C1=G(B1,B11,B6);
+C2=G(B2,B10,B7);
+C3=G(B4,B9,B5);
+
+P1=E(B1,C1,ee);
+P2=E(B2,C2,ee);
+P3=E(B4,C3,ee);
+draw(P1);
+draw(P2);
+draw(P3);
+draw(P1,P2);
+draw(P1,P3);
+draw(P2,P3);
+P23=F(P2,P3);
+draw(P1,P23);
+shape11=polygon([P1,P2,P23]);
+fill(shape11,color->(alpha(1-0.1*ee),alpha(0.8+0.1*ee),alpha(0.2+0.8*ee)));
+
+shape22=polygon([P1,P3,P23]);
+fill(shape22,color->(alpha(1-0.3*ee),alpha(0.5+0.2*ee),alpha(0.3+0.7*ee)));
+
+
+P4=E(B11,C1,ee);
+P5=E(B10,C2,ee);
+P6=E(B9,C3,ee);
+draw(P4);
+draw(P5);
+draw(P6);
+draw(P4,P5);
+draw(P4,P6);
+draw(P5,P6);
+P46=F(P4,P6);
+draw(P5,P46);
+shape33=polygon([P5,P6,P46]);
+fill(shape33,color->(alpha(0.98-0.38*ee),alpha(0.85-0.25*ee),alpha(0.98-0.38*ee)));
+
+shape44=polygon([P4,P5,P46]);
+fill(shape44,color->(alpha(0.98-0.48*ee),alpha(0.55-0.05*ee),alpha(0.98-0.48*ee)));
+
+
+P7=E(B6,C1,ee);
+P8=E(B7,C2,ee);
+P9=E(B5,C3,ee);
+draw(P7);
+draw(P8);
+draw(P9);
+draw(P7,P8);
+draw(P7,P9);
+draw(P8,P9);
+P78=F(P7,P8);
+draw(P9,P78);
+shape55=polygon([P7,P9,P78]);
+fill(shape55,color->(alpha(0.52-0.22*ee),alpha(0.8-0.5*ee),alpha(0.98-0.68*ee)));
+
+shape66=polygon([P8,P9,P78]);
+fill(shape66,color->(alpha(0.2*ee),alpha(0.74-0.54*ee),alpha(1-0.8*ee)));
+
+shape=(shape11++shape22)~~(shape33++shape44)~~(shape55++shape66)++(shape11++shape22)~~(shape33++shape44)++(shape11++shape22)~~(shape55++shape66)++(shape33++shape44)~~(shape55++shape66);
+fill(shape,color->hue(ee*alpha(0.25)));
+draw(shape);
+);
+</script>
+    <script type="text/javascript">
+var cdy = CindyJS({
+  scripts: "cs*",
+  defaultAppearance: {
+    dimDependent: 0.7,
+    fontFamily: "sans-serif",
+    lineSize: 1,
+    pointSize: 5.0,
+    textsize: 12.0
+  },
+  angleUnit: "°",
+  geometry: [
+    {name: "A", type: "Free", pos: [4.0, 0.7962747380675205, 0.06571291385957827], color: [0.714, 1.0, 0.667], size: 4.0},
+    {name: "B", type: "Free", pos: [4.0, -3.7344398340248968, 0.23422154774015655], color: [0.714, 1.0, 0.667], size: 4.0},
+    {name: "a", type: "Segment", dimDependent: 1, color: [0.0, 0.0, 1.0], args: ["A", "B"], visible: false, labeled: true},
+    {name: "C", type: "Free", pos: [4.0, -0.7107296137339055, 0.04845269785869333], color: [0.714, 1.0, 0.667], size: 4.0},
+    {name: "b", type: "Segment", color: [0.0, 0.0, 1.0], args: ["B", "C"], visible: false, labeled: true},
+    {name: "c", type: "Segment", color: [0.0, 0.0, 1.0], args: ["C", "A"], visible: false, labeled: true},
+    {name: "D", type: "Mid", color: [0.714, 1.0, 0.667], args: ["A", "B"], visible: false, labeled: true, size: 2.0},
+    {name: "E", type: "Mid", color: [0.714, 1.0, 0.667], args: ["B", "C"], visible: false, labeled: true, size: 2.0},
+    {name: "F", type: "Mid", color: [0.714, 1.0, 0.667], args: ["C", "A"], visible: false, labeled: true, size: 2.0},
+    {name: "d", type: "Segment", color: [0.0, 0.0, 1.0], args: ["A", "E"], visible: false, labeled: true},
+    {name: "e", type: "Segment", color: [0.0, 0.0, 1.0], args: ["B", "F"], visible: false, labeled: true},
+    {name: "f", type: "Segment", color: [0.0, 0.0, 1.0], args: ["C", "D"], visible: false, labeled: true},
+    {name: "G", type: "Meet", color: [1.0, 0.0, 0.0], args: ["d", "e"], visible: false, labeled: true},
+    {name: "H", type: "Free", pos: [2.4, -4.0, -0.8], color: [0.714, 1.0, 0.667], pinned: true},
+    {name: "K", type: "Free", pos: [-0.75, -4.0, 0.25], color: [0.714, 1.0, 0.667], pinned: true},
+    {name: "g", type: "Segment", color: [0.714, 1.0, 0.667], args: ["H", "K"]},
+    {name: "L", type: "PointOnSegment", pos: [2.4, -4.0, -0.8], color: [0.714, 1.0, 0.667], args: ["g"]},
+    {name: "M", type: "PointOnSegment", pos: [-1.7142855673469513, -4.0, 0.5714285224489838], color: [1.0, 0.0, 0.0], args: ["g"], visible: false, pinned: true, labeled: true}
+  ],
+  ports: [{
+    id: "CSCanvas",
+    width: 1920,
+    height: 867,
+    transform: [{visibleRect: [-28.805581860000007, 19.097427580000005, 107.25030294000003, -42.34030790000001]}],
+    grid: 2.5,
+    background: "rgb(168,176,192)"
+  }],
+  csconsole: false,
+  cinderella: {build: 2008, version: [3, 0, 2008]}
+});
+    </script>
+</head>
+<body>
+    <div id="CSCanvas"></div>
+</body>
+</html>
