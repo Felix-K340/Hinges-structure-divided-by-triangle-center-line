@@ -10,6 +10,14 @@
 
 ![image4](https://github.com/Felix-K340/Hinges-structure-divided-by-triangle-center-line/blob/master/4.jpg)
 
+
+
+![1.jpg](https://s2.loli.net/2022/02/23/GIFosw1JCahMXeZ.jpg)
+![4.jpg](https://s2.loli.net/2022/02/23/Kb8HGwBYF4mnCyx.jpg)
+![3.jpg](https://s2.loli.net/2022/02/23/6QmBskS1rWAeyNg.jpg)
+![2.jpg](https://s2.loli.net/2022/02/23/SmoKrsI7VCPQOzD.jpg)
+
+
 #####                                              三角形被中线分割的6各部分绕着“铰链”旋转90度得到全等的三角形，它一直到2014年才被人发现。十分有趣且有启发意义的定理！
 
 #####                                             Gif图给出Cinderella动态绘图软件所制作的动画（当然不是我做的），看到动图感觉很有趣，于是花费了业余时间学习Cinderella且
