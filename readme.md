@@ -2,13 +2,13 @@
 
 ###                                                        微博@科普君XueShu雪树在21年11月份左右写了一遍小文章，截图如下：
 
-![1.jpg]
+![image]https://github.com/Felix-K340/Hinges-structure-divided-by-triangle-center-line/blob/master/1.jpg
 
-![2.jpg]
+![image]https://github.com/Felix-K340/Hinges-structure-divided-by-triangle-center-line/blob/master/2.jpg
 
-![3.jpg]
+![image]https://github.com/Felix-K340/Hinges-structure-divided-by-triangle-center-line/blob/master/3.jpg
 
-![4.jpg]
+![image]https://github.com/Felix-K340/Hinges-structure-divided-by-triangle-center-line/blob/master/4.jpg
 
 #####                                              三角形被中线分割的6各部分绕着“铰链”旋转90度得到全等的三角形，它一直到2014年才被人发现。十分有趣且有启发意义的定理！
 
